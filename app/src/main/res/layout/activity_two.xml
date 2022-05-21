@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ActivityTwo">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/relLayout">
+
+        <!-- Top Navbar-->
+        <RelativeLayout
+            android:id="@+id/relLayoutTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/green">
+
+            <ImageButton
+                android:id="@+id/settingsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_extra_settings" />
+
+            <TextView
+                android:id="@+id/profileHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Profile Page"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/editBioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:text="Edit Bio" />
+
+        </RelativeLayout>
+
+        <!-- Main Body -->
+        <RelativeLayout
+            android:id="@+id/relLayoutMiddle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_above="@id/relLayoutBotBar"
+            android:layout_below="@id/relLayoutTopBar">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/green"
+                android:id="@+id/profileTopHalf">
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/profile_image"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/default_icon_person"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="10dp" />
+
+                <ImageButton
+                    android:id="@+id/uploadNewPic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/profile_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-12dp"
+                    android:src="@drawable/ic_extra_upload" />
+
+                <TextView
+                    android:id="@+id/profileUsernameField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/uploadNewPic"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/settings_bottom_border"
+                    android:backgroundTint="@color/green"
+                    android:paddingBottom="10dp"
+                    android:text="Username"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/profileTopHalf"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/profileDescriptionHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/profileDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profileDescriptionHeader"
+                    android:text="I am a user of the system and I have quite a basic user description since I'm not a big fan of reading books"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/profileJoinDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profileDescription"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/settings_bottom_border"
+                    android:text="Join Date 07 March 2022"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/myListStatsHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profileJoinDate"
+                    android:layout_marginTop="5dp"
+                    android:text="My Stats"
+                    android:textColor="@color/black"
+                    android:background="@drawable/underline_black"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/myListCompleted"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/myListStatsHeader"
+                    android:text="Completed:  "
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/myListCompletedBuffer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/myListStatsHeader"
+                    android:layout_toRightOf="@+id/myListCompleted"
+                    android:text="25"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/myListReading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/myListCompleted"
+                    android:text="Reading:  "
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+                <TextView
+                    android:id="@+id/myListReadingBuffer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/myListCompleted"
+                    android:layout_toRightOf="@+id/myListReading"
+                    android:text="5"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/myListPlanningToRead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/myListReading"
+                    android:text="Plan to Read:  "
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+                <TextView
+                    android:id="@+id/myListPlanningToReadBuffer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/myListReading"
+                    android:layout_toRightOf="@+id/myListPlanningToRead"
+                    android:text="30"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/myListOnHold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/myListPlanningToRead"
+                    android:text="On Hold:  "
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+                <TextView
+                    android:id="@+id/myListOnHoldBuffer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/myListPlanningToRead"
+                    android:layout_toRightOf="@+id/myListReading"
+                    android:text="5"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/myListDropped"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/myListOnHold"
+                    android:text="Dropped:  "
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/myListDroppedBuffer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/myListOnHold"
+                    android:layout_toRightOf="@+id/myListDropped"
+                    android:text="30"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/myListTotalBooks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/myListDropped"
+                    android:text="Total books in List:  "
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/myListTotalBooksBuffer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/myListDropped"
+                    android:layout_toRightOf="@+id/myListTotalBooks"
+                    android:text="30"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/userGuideBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/myListTotalBooks"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@drawable/ic_user_guide"
+                    android:text="User Guide" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <!-- Bottom Navigation Bar-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/relLayoutBotBar"
+            android:layout_alignParentBottom="true">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavView_Bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/navbar_bottom_border"
+                app:menu="@menu/bottom_navigation_menu">
+
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+<!--Changed-->

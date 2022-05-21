@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ActivityOne">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/relLayout">
+
+        <!-- Top Navbar-->
+        <RelativeLayout
+            android:id="@+id/relLayoutTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/navbar_top_border">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <EditText
+                android:id="@+id/searchPageSearchBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="70dp"
+                android:ems="10"
+                android:hint="Search Book"
+                android:inputType="text"
+                android:textColor="@color/black" />
+
+            <ImageButton
+                android:id="@+id/searchBooksButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="11dp"
+                android:src="@drawable/ic_bnav_search" />
+
+        </RelativeLayout>
+
+        <!-- Main Body -->
+        <RelativeLayout
+            android:id="@+id/relLayoutMiddle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_above="@id/relLayoutBotBar"
+            android:layout_below="@id/relLayoutTopBar"
+            android:paddingTop="7dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/searchedBooks"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </RelativeLayout>
+
+        <!-- Bottom Navigation Bar-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/relLayoutBotBar"
+            android:layout_alignParentBottom="true">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/bottomNavView_Bar"
+                android:background="@drawable/navbar_bottom_border"
+                app:menu="@menu/bottom_navigation_menu">
+
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+<!--Changed-->

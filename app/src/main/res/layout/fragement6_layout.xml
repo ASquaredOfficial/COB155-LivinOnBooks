@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:id="@+id/book_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp" />
+    <RelativeLayout
+        android:id="@+id/emptyCompletedList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/book_imageView"
+            android:layout_width="80dp"
+            android:layout_height="120dp" />
+
+        <TextView
+            android:id="@+id/title_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@+id/book_imageView"
+            android:text="You have no Books"
+            android:textColor="@color/black"
+            android:textSize="23dp"
+            android:textStyle="bold"  />
+
+        <TextView
+            android:id="@+id/idListViewPublisher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_textview"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/book_imageView"
+            android:text="Feel free to add more to your collection"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/idListViewPageNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idListViewPublisher"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/book_imageView"
+            android:text=""
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+</RelativeLayout>
+<!--Changed-->

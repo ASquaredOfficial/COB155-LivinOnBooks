@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/book_imageView"
+        android:layout_width="80dp"
+        android:layout_height="120dp"
+        android:src="@drawable/davinci_code" />
+
+    <TextView
+        android:id="@+id/title_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/book_imageView"
+        android:text="Book Title"
+        android:textColor="@color/black"
+        android:textSize="23dp"
+        android:textStyle="bold"  />
+
+
+    <TextView
+        android:id="@+id/idListViewPublisher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_textview"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/book_imageView"
+        android:text="Publisher"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/idListViewPageNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idListViewPublisher"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/book_imageView"
+        android:text="Page count"
+        android:textColor="@color/black"
+        android:layout_marginLeft="20dp"
+        android:textSize="18sp" />
+
+
+
+</RelativeLayout>

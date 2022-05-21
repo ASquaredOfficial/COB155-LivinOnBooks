@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "965518641572",
+    "project_id": "lovinonbooks-53e69",
+    "storage_bucket": "lovinonbooks-53e69.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:965518641572:android:985e797cdfce858b4c1931",
+        "android_client_info": {
+          "package_name": "com.example.myapplayout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "965518641572-dtc97en1bfinbdr81qrnvmsl0u9tfsfg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD44zetKMNEVCypLCSqSTSuTJz1WGW0-zg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "965518641572-dtc97en1bfinbdr81qrnvmsl0u9tfsfg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
