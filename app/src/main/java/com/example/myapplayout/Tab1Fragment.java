@@ -1,7 +1,9 @@
 package com.example.myapplayout;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -33,6 +35,10 @@ public class Tab1Fragment extends Fragment {
     private static String preTag = "ASquared-";
     private static final String TAG = preTag + "AllBooksFragment";
 
+    SharedPreferences sharedPreferences;
+    public static final String filename = "login";
+    public static final String sPrefusername = "username";
+
     private static final String loadError = "Not Applicable";
     private ArrayList<MyBook> mBookList;
 
@@ -44,6 +50,12 @@ public class Tab1Fragment extends Fragment {
         View view = inflater.inflate(R.layout.fragement1_layout, container, false);
         Log.d(TAG, "onCreate: started");
 
+        sharedPreferences = getActivity().getSharedPreferences(filename, Context.MODE_PRIVATE);
+        if (sharedPreferences.contains(sPrefusername)){
+            Toast.makeText(getActivity(), "Hello" + sharedPreferences.getString(sPrefusername, ""), Toast.LENGTH_SHORT).show();
+        }
+
+        //--- Add books from personal database onto the fragment page
         mBookList = new ArrayList<>();
         BookDatabaseHelper db = new BookDatabaseHelper(getActivity());
         AllBookLists = (ArrayList<MyBook>) db.getMyBooks("all");;

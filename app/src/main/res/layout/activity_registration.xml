@@ -11,9 +11,11 @@
         android:id="@+id/imageView2"
         android:layout_width="290dp"
         android:layout_height="259dp"
+        android:src="@drawable/livin_on_books_icon"
+        android:contentDescription="main app logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <RelativeLayout
         android:id="@+id/authBox"
@@ -40,7 +42,8 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="10dp"
-            android:hint="Enter Username" />
+            android:hint="Enter Username"
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/regInputUsernameConfirm"
@@ -50,7 +53,8 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="10dp"
-            android:hint="Confirm Username" />
+            android:hint="Confirm Username"
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/regInputPassword"

@@ -1,6 +1,7 @@
 package com.example.myapplayout;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +37,7 @@ public class MyListBookAdapter extends ArrayAdapter<MyBook> {
         TextView pageCountTextView = convertView.findViewById(R.id.idListViewPageNo);
 
         String url = "https://books.google.com/books/content?id=" + bookList.get(position).getBookId() + "&printsec=frontcover&img=1&zoom=1&source=gbs_api";
+        Log.d("Unkown", "thumbnail: " + url);
         Picasso.get().load(url).into(bookImage);
         //bookImage.setImageResource(bookList.get(position).getBookImageId());
         titleTextView.setText(bookList.get(position).getBookTitle());

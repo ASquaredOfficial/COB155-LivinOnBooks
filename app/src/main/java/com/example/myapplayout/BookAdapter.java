@@ -54,6 +54,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
         // below line is use to set image from URL in our image view.
         String url = "https://books.google.com/books/content?id=" + bookInfo.getBookId() + "&printsec=frontcover&img=1&zoom=1&source=gbs_api";
         Picasso.get().load(url).into(holder.bookImageView);
+        Log.d("Unknown", "thumbnail: " + url);
 
         //------Give them an onclick
         // below line is use to add on click listener for our item of recycler view.

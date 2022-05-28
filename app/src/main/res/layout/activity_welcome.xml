@@ -10,9 +10,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="290dp"
-        android:layout_height="259dp"
+        android:layout_width="352dp"
+        android:layout_height="350dp"
         android:layout_marginTop="68dp"
+        android:src="@drawable/livin_on_books_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,8 +22,8 @@
     <Button
         android:id="@+id/btnToRegistration"
         android:layout_width="163dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="64dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="30dp"
         android:text="Register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

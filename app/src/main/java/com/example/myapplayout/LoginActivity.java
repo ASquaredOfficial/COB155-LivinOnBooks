@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,6 +26,11 @@ public class LoginActivity extends AppCompatActivity {
     private static String preTag = "ASquared";
     private static final String TAG = preTag + "RegistrationActivity";
 
+    SharedPreferences sharedPreferences;
+    public static final String fileName = "login";
+    public static final String sPrefUserName = "username";
+    public static final String sPrefPassword = "password";
+
     private EditText inputUsername, inputPassword;
     TextView dontHaveAccount;
     Button btnLogin;
@@ -37,6 +44,13 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Log.d(TAG, "onCreate: started");
+
+        sharedPreferences = getSharedPreferences(fileName, Context.MODE_PRIVATE);
+        if (sharedPreferences.contains(sPrefUserName)){
+            Intent i = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(i);
+            finish();
+        }
 
         inputUsername = (EditText) findViewById(R.id.inputUsernameLogin);
         inputPassword = (EditText) findViewById(R.id.inputPasswordLogin);
@@ -75,6 +89,8 @@ public class LoginActivity extends AppCompatActivity {
         progDialogReg.setCanceledOnTouchOutside(false);
         progDialogReg.show();
 
+        String finalUsername = username;
+        String finalPassword = password;
         mAuth.signInWithEmailAndPassword(username, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -82,8 +98,16 @@ public class LoginActivity extends AppCompatActivity {
                     progDialogReg.dismiss();
                     sendUserToNextActivity();
                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+
+                    // set shared preferences
+                    SharedPreferences.Editor editor  = sharedPreferences.edit();
+                    editor.putString(sPrefUserName, finalUsername);
+                    editor.putString(sPrefPassword, finalPassword);
+                    editor.commit();
                 } else {
                     progDialogReg.dismiss();
+                    inputUsername.requestFocus();
+                    inputUsername.setText("");
                     Toast.makeText(LoginActivity.this, ""+task.getException(), Toast.LENGTH_SHORT).show();
                 }
             }
@@ -94,5 +118,6 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+        finish();
     }
 }
